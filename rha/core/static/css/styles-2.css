@@ -532,7 +532,7 @@ blockquote {
   bottom: -75px;
 }
 .promo .iphone .flexslider .flex-control-nav {
-  bottom: -50px;
+  bottom: 10px; /* -50px; */
 }
 .promo .iphone:before {
   content: "";
