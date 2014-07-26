@@ -769,20 +769,36 @@ blockquote {
   font-size: 16px;
 }
 .cost .box .area {
-  padding-top: 15px;
+  padding: 15px;
   margin: 15px;
-  border: 1px solid red;
+  background-color: #145456;/* rgba(20,84,86,0.2); */
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
 }
 .cost .box .area img {
   margin-bottom: 15px;
 }
-.cost .box .area .name {
-  color: #0b2c2c;
-  margin-bottom: 0px;
+.cost .box h3 {
+  font-weight: 900;
 }
-.cost .box .area .title {
-  color: #87e0e2;
+.cost .box .area h3 {
+  font-weight: 700;
+  padding-bottom: 15px;
+}
+.cost .box .area h3 sup {
   font-weight: 300;
+  font-size: 15px;
+}
+.cost .box .area h3 small {
+  color: #fff;
+  font-weight: 300;
+}
+.cost .box .area .legend {
+  font-weight: 400;
+  font-size: 13px;
 }
 .cost .box .connect {
   color: #fff;
@@ -1236,4 +1252,14 @@ blockquote {
 }
 .team .teacher .connect a:hover {
   color: #061718;
+}
+.img-rounded{
+  width: 160px;
+  height: 160px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #145456;
 }
