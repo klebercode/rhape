@@ -378,10 +378,10 @@ blockquote {
 /* ======= Promo Section ======= */
 .promo {
   background-color: #28a5a8;
-  background-image: url('../images/media/bg1.jpg');
+  background-image: url('../images/media/bg20.jpg');
   background-repeat: no-repeat;
-  background-position: left center;
-  /* background-size: contain !important; */
+  background-position: bottom center;
+  background-size: cover !important;
   color: #000;
 }
 .promo .container {
