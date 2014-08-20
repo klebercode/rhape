@@ -279,3 +279,4 @@ class Subscribe(models.Model):
     class Meta:
         verbose_name = _(u'Inscrição')
         verbose_name_plural = _(u'Inscrições')
+
