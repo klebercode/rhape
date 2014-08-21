@@ -58,6 +58,11 @@ class TeamAdmin(admin.ModelAdmin):
     search_fields = ['name', 'link', 'description', 'image']
 
 
+class InstituteAdmin(admin.ModelAdmin):
+    search_fields = ['name',]
+    list_per_page = 30
+
+
 admin.site.register(Enterprise, EnterpriseAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(Partner)
@@ -69,5 +74,5 @@ admin.site.register(Public, PublicAdmin)
 admin.site.register(Team, TeamAdmin)
 admin.site.register(Cost)
 admin.site.register(Graduation)
-admin.site.register(Institute)
+admin.site.register(Institute, InstituteAdmin)
 admin.site.register(Subscribe, SubscribeAdmin)
