@@ -243,6 +243,7 @@ class Institute(models.Model):
     class Meta:
         verbose_name = _(u'Instituição')
         verbose_name_plural = _(u'Instituições')
+        ordering = ['name',]
 
 
 class Subscribe(models.Model):
