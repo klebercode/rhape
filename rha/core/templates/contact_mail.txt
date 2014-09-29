@@ -1,6 +1,6 @@
-Nome: {{ name }}
-Fone: {{ phone }}
-E-mail: {{ email }}
-Assunto: {{ subject }}
+Nome: {{ name }} \n
+Fone: {{ phone }} \n
+E-mail: {{ email }} \n
+Assunto: {{ subject }} \n
 Menssagem:
 {{ message }}

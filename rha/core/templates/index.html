@@ -295,9 +295,11 @@
                             {% bootstrap_form subscribe_form %}
                             <input type="hidden" name="action" value="subscribe">
                             {% buttons %}
+                                <center>
                                 <button type="submit" class="btn btn-lg btn-theme">
                                     {% bootstrap_icon "checked" %} Enviar Inscrição!
                                 </button>
+                                </center>
                             {% endbuttons %}
                         </form><!--//form-->
                     {% endif %}
@@ -338,7 +340,7 @@
                 <p>Aguardando conteúdo.</p>
                 {% endfor %}
             </div><!--//row-->
-            <div class="row text-center">
+            <div class="row">
                 <div class="contact-form col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
                     {% if contact_success %}
                         <p>Mensagem enviada com sucesso.</p>
@@ -346,20 +348,15 @@
                     {% else %}
                         <form class="form" role="form" method="post">
                             {% csrf_token %}
-                            {% for field in contact_form %}
-                            <div class="form-group{% if field.errors %} error{% endif %}">
-
-                                {{ field }}
-                                {% if field.errors %}
-                                <span class="help-block">
-                                    {{ field.errors|join:", " }}
-                                </span>
-                                {% endif %}
-                            </div>
-                            {% endfor %}
-                            <br/>
+                            {% bootstrap_form contact_form %}
                             <input type="hidden" name="action" value="contact">
-                            <button type="submit" class="btn btn-lg btn-theme">Enviar Mensagem</button>
+                            {% buttons %}
+                                <center>
+                                <button type="submit" class="btn btn-lg btn-theme">
+                                    {% bootstrap_icon "checked" %} Enviar Mensagem
+                                </button>
+                                </center>
+                            {% endbuttons %}
                         </form><!--//form-->
                     {% endif %}
                 </div><!--//contact-form-->
