@@ -38,12 +38,11 @@ class ContactForm(forms.Form):
             'subject': self.cleaned_data['subject'],
             'message': self.cleaned_data['message'],
         }
+        email_to = 'contato@rhape.com.br'
         message = render_to_string('contact_mail.txt', context)
         message_html = render_to_string('contact_mail.html', context)
-        msg = EmailMultiAlternatives(subject, message, 'no-reply@rhape.com.br',
-                                     ['contato@rhape.com.br']
-                                     # ['kleberss@gmail.com']
-                                     )
+        msg = EmailMultiAlternatives(subject, message,
+                                     'no-reply@rhape.com.br', [email_to])
 
         msg.attach_alternative(message_html, 'text/html')
         msg.send()

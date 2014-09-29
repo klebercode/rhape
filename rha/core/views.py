@@ -32,6 +32,7 @@ def home(request):
             contact_form = ContactForm(prefix='Contact')
             if subscribe_form.is_valid():
                 # obj = subscribe_form.save()
+                subscribe_form.save()
                 subscribe_form.send_mail()
                 context['subscribe_success'] = True
     else:
