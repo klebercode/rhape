@@ -76,9 +76,11 @@ class Enterprise(models.Model):
     phone1 = models.CharField(_(u'Fone 1'), max_length=20,
                               help_text='(99) 9999-9999')
     phone2 = models.CharField(_(u'Fone 2'), max_length=20,
-                              help_text='(99) 9999-9999', blank=True, null=True)
+                              help_text='(99) 9999-9999', blank=True,
+                              null=True)
     phone3 = models.CharField(_(u'Fone 3'), max_length=20,
-                              help_text='(99) 9999-9999', blank=True, null=True)
+                              help_text='(99) 9999-9999', blank=True,
+                              null=True)
     email = models.EmailField(_(u'Email'))
 
     def __unicode__(self):
@@ -243,7 +245,7 @@ class Institute(models.Model):
     class Meta:
         verbose_name = _(u'Instituição')
         verbose_name_plural = _(u'Instituições')
-        ordering = ['name',]
+        ordering = ['name']
 
 
 class Subscribe(models.Model):
@@ -280,4 +282,3 @@ class Subscribe(models.Model):
     class Meta:
         verbose_name = _(u'Inscrição')
         verbose_name_plural = _(u'Inscrições')
-

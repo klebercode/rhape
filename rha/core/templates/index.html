@@ -44,7 +44,6 @@
             <h1 class="logo pull-left">
                 <a class="scrollto" href="#promo">
                     <img id="logo-image" class="logo-image" src="{{ STATIC_URL }}/images/logo/logo.png" alt="Logo">
-                    <!-- <span class="logo-title">Delta</span> -->
                 </a>
             </h1><!--//logo-->
             <nav id="main-nav" class="main-nav navbar-right" role="navigation">
@@ -99,73 +98,6 @@
                         </div><!--//note-->
                     </div>
                 </div><!--//overview-->
-
-                <!--// iPhone starts -->
-                <div class="phone iphone iphone-black col-md-4 col-sm-12 col-xs-12 ">
-                    <div class="iphone-holder phone-holder">
-                        <div class="iphone-holder-inner">
-                            <div class="slider flexslider">
-                                <ul class="slides">
-                                    <!-- <li>
-                                        <img src="{{ STATIC_URL }}/images/media/microscopio.png"  alt="" />
-                                    </li> -->
-                                    <!-- <li>
-                                        <img src="{{ STATIC_URL }}/images/media/doctor2.png"  alt="" />
-                                    </li> -->
-                                    <!-- <li>
-                                        <img src="{{ STATIC_URL }}/images/media/doctor3.png"  alt="" />
-                                    </li> -->
-                                </ul><!--//slides-->
-                            </div><!--//flexslider-->
-                        </div><!--//iphone-holder-inner-->
-                    </div><!--//iphone-holder-->
-                </div><!--//iphone-->
-                <!--// iPhone ends -->
-
-                <!--// Android starts -->
-                <div class="phone android col-md-4 col-sm-12 col-xs-12" style="display:none">
-                    <div class="android-holder phone-holder">
-                        <div class="android-holder-inner">
-                            <div class="slider flexslider">
-                                <ul class="slides">
-                                    <li>
-                                        <img src="{{ STATIC_URL }}/images/android/android-slide-1.png"  alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="{{ STATIC_URL }}/images/android/android-slide-2.png"  alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="{{ STATIC_URL }}/images/android/android-slide-3.png"  alt="" />
-                                    </li>
-                                </ul><!--//slides-->
-                            </div><!--//flexslider-->
-                        </div><!--//phone-holder-inner-->
-                    </div><!--//iphone-holder-->
-                </div><!--//iphone-->
-                <!--// Android ends -->
-
-                <!--// iPad starts -->
-                <div class="ipad ipad-black col-md-4 col-sm-12 col-xs-12 col-md-pull-1" style="display:none">
-                    <div class="ipad-holder">
-                        <div class="ipad-holder-inner">
-                            <div class="slider flexslider">
-                                <ul class="slides">
-                                    <li>
-                                        <img src="{{ STATIC_URL }}/images/ipad/ipad-slide-1.png"  alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="{{ STATIC_URL }}/images/ipad/ipad-slide-2.png"  alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="{{ STATIC_URL }}/images/ipad/ipad-slide-3.png"  alt="" />
-                                    </li>
-                                </ul><!--//slides-->
-                            </div><!--//flexslider-->
-                        </div><!--//ipad-holder-inner-->
-                    </div><!--//ipad-holder-->
-                </div><!--//ipad-->
-                <!--// iPad ends -->
-
             </div><!--//row-->
         </div><!--//container-->
     </section><!--//promo-->
@@ -200,17 +132,23 @@
             <h2 class="title text-center">O Curso</h2>
             <p class="intro">
               {% for course in courses %}
-                  {{ course.description|linebreaks }}
+                {{ course.description|linebreaks }}
+              {% empty %}
+                <p>Aguardando conteúdo.</p>
               {% endfor %}
               <br />
               <strong>Objetivo</strong><br />
               {% for objective in objectivies %}
                 <i class="fa fa-check"></i> {{ objective.description }}<br />
+              {% empty %}
+                <p>Aguardando conteúdo.</p>
               {% endfor %}
               <br />
               <strong>Público alvo</strong><br />
               {% for public in publics %}
                 {{ public.description }}
+              {% empty %}
+                <p>Aguardando conteúdo.</p>
               {% endfor %}
               <br /><br />
             </p>
@@ -241,6 +179,8 @@
               <ol class="carousel-indicators">
                 {% for gallery in galleries %}
                     <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.counter }}"{% if forloop.first %} class="active"{% endif%}></li>
+                {% empty %}
+                    <p>Aguardando conteúdo.</p>
                 {% endfor %}
               </ol>
 
@@ -253,6 +193,8 @@
                             ...
                           </div> -->
                     </div>
+                {% empty %}
+                    <p>Aguardando conteúdo.</p>
                 {% endfor %}
               </div>
 
@@ -388,8 +330,12 @@
                             <li><i class="fa fa-envelope"></i>{{ enterprise.email }}</li>
                             <li><i class="fa fa-phone-square"></i>{{ enterprise.phone1 }}</li>
                         </ul>
+                    {% empty %}
+                        <p>Aguardando conteúdo.</p>
                     {% endfor %}
                 </div>
+                {% empty %}
+                <p>Aguardando conteúdo.</p>
                 {% endfor %}
             </div><!--//row-->
             <div class="row text-center">
@@ -421,7 +367,7 @@
             <div class="text-center">
                  <ul class="social-icons list-inline">
                     <!-- <li><a href="#" ><i class="fa fa-twitter"></i></a></li> -->
-                    <li><a href="https://www.facebook.com/cursorha" ><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.facebook.com/cursorha"><i class="fa fa-facebook"></i></a></li>
                     <!-- <li><a href="#" ><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="#" ><i class="fa fa-google-plus"></i></a></li> -->
                 </ul><!--//social-icons-->
@@ -434,6 +380,8 @@
         <div class="container">
             {% for enterprise in enterprises %}
             <small class="copyright pull-left">Copyright &copy; 2014 {{ enterprise.name }}</small>
+            {% empty %}
+            <small class="copyright pull-left">Copyright &copy; 2014</small>
             {% endfor %}
             <ul class="links list-inline">
                 <li><a href="#">Dúvidas?</a></li>

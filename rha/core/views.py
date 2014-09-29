@@ -1,5 +1,5 @@
 # coding: utf-8
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from forms import ContactForm, SubscribeForm
 from models import (Enterprise, Contact, Team, Cost, Partner,
@@ -31,7 +31,7 @@ def home(request):
                                            prefix='Subscribe')
             contact_form = ContactForm(prefix='Contact')
             if subscribe_form.is_valid():
-                obj = subscribe_form.save()
+                # obj = subscribe_form.save()
                 subscribe_form.send_mail()
                 context['subscribe_success'] = True
     else:
@@ -42,3 +42,7 @@ def home(request):
     context['subscribe_form'] = subscribe_form
 
     return render(request, 'index.html', context)
+
+
+def email(request):
+    return redirect('https://www.zoho.com/mail/login.html')
